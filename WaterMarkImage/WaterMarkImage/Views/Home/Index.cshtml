@@ -1,0 +1,20 @@
+﻿<div class="jumbotron">
+    <h1>Demo Project</h1>
+    <p class="lead">Add Watermark Text and Image to Photo  using C#</p>
+</div>
+<div>
+    @using (Html.BeginForm("WaterMarkImage", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        <label>Select image to upload:</label>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+
+    }
+</div>
+@if (ViewBag.ImgName != null)
+{
+    <div>
+        <img src="~/ImgWaterMark/@ViewBag.ImgName" />
+    </div>
+
+}
